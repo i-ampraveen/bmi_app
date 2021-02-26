@@ -28,6 +28,7 @@ class _home_screenState extends State<home_screen> {
   Color _ThumbOverlayColor = HexColor("#f5cc0a").withOpacity(0.1);
   Color _BtnColor = HexColor("#EB1555");
   Color _newAppBgColor = HexColor("#111328");
+  String buttonText = "CALCULATE";
   bool changeButtonColorMale = false;
   bool changeButtonColorFemale = false;
   int age = 20;
@@ -497,29 +498,16 @@ class _home_screenState extends State<home_screen> {
               height: 0.06.sh,
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
-                child: RaisedButton(
-                    padding: EdgeInsets.zero,
-                    color: _BtnColor,
-                    child: Container(
-                      width: ScreenUtil().screenWidth,
-                      height: 0.06.sh,
-                      child: Center(
-                        child: btnText(
-                            text: "CALCULATE",
-                            size: 21.0.ssp,
-                            color: Colors.white
-                        )
-                      ),
-                    ),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(10.0)
-                    ),
-                    onPressed: (){
-                      debugPrint("Your BMI is...");
-                      Navigator.push(context, MaterialPageRoute(
-                                              builder: (context) => BMIResult()
-                                            ));
-                    }
+                child: calculateButton(
+                    btnColor: _BtnColor,
+                    txtColor: Colors.white,
+                    text: buttonText,
+                    width: ScreenUtil().screenWidth,
+                    height: 0.06.sh,
+                    size: 21.0.ssp,
+                    callback: () => Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => BMIResult()
+                    ))
                 ),
               ),
             )
