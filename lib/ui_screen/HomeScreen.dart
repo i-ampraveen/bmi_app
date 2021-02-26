@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:bmi_app_one/components/Button_Text_TextStyle.dart';
-import 'package:bmi_app_one/components/RoundIcon.dart';
+import 'package:bmi_app_one/components/Icons.dart';
 import 'package:bmi_app_one/utils/TextStyle_Decorations.dart';
 import 'package:bmi_app_one/utils/hexcolor.dart';
 import 'package:flutter/cupertino.dart';
@@ -94,19 +94,31 @@ class _home_screenState extends State<home_screen> {
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.fromLTRB(0, 7, 0, 12),
-                                      child: Icon(Ionicons.ios_male,size: 88.ssp,
-                                          color: changeButtonColorMale ? _ActiveColor : _InActiveColor
-                                      ),
+                                      child:
+                                        GenderIcon(
+                                            genderIcon: Ionicons.ios_male,
+                                            iconSize: 88.ssp,
+                                            color: changeButtonColorMale ? _ActiveColor : _InActiveColor,
+                                        ),
+                                      // Icon(Ionicons.ios_male,size: 88.ssp,
+                                      //     color: changeButtonColorMale ? _ActiveColor : _InActiveColor
+                                      // ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.fromLTRB(0, 1, 0, 5),
-                                      child: Text(
-                                        "MALE", style: TextStyle(
-                                        fontSize: 24.ssp,
-                                          fontFamily: 'San francisco',
-                                          color: changeButtonColorMale ? _ActiveColor : _InActiveColor
-                                      ),
-                                      ),
+                                      child:
+                                        text(
+                                            text1: "MALE",
+                                            size: 24.ssp,
+                                            color: changeButtonColorMale ? _ActiveColor : _InActiveColor,
+                                        ),
+                                      // Text(
+                                      //   "MALE", style: TextStyle(
+                                      //   fontSize: 24.ssp,
+                                      //     fontFamily: 'San francisco',
+                                      //     color: changeButtonColorMale ? _ActiveColor : _InActiveColor
+                                      // ),
+                                      // ),
                                     ),
                                   ],
                                 ),
@@ -131,22 +143,33 @@ class _home_screenState extends State<home_screen> {
                                   /* Age Text */
                                   Padding(
                                     padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
-                                    child: Text("AGE",
-                                    style: TextStyle(
-                                      fontSize: 24.ssp,
-                                      fontFamily: 'San francisco',
-                                      color: _InActiveColor
-                                    ),
-                                    ),
+                                    child:
+                                      text(
+                                          text1: "AGE",
+                                          size: 24.ssp,
+                                          color: _InActiveColor
+                                      ),
+                                    // Text("AGE",
+                                    // style: TextStyle(
+                                    //   fontSize: 24.ssp,
+                                    //   fontFamily: 'San francisco',
+                                    //   color: _InActiveColor
+                                    // ),
+                                    // ),
                                   ),
                               /* Display Age in Numbers */
-                                Text(age.toString(),
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 26.ssp,
-                                    fontFamily: 'San francisco',
+                                  text(
+                                      text1: age.toString(),
+                                      size: 26.ssp,
+                                      color: Colors.white
                                   ),
-                                ),
+                                // Text(age.toString(),
+                                //   style: TextStyle(
+                                //     color: Colors.white,
+                                //     fontSize: 26.ssp,
+                                //     fontFamily: 'San francisco',
+                                //   ),
+                                // ),
                                   Row(
                                     children: [
                                       /* Age decrease icon */
@@ -260,19 +283,31 @@ class _home_screenState extends State<home_screen> {
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.fromLTRB(0, 7, 0, 12),
-                                      child: Icon(Ionicons.ios_female,size: 88.ssp,
-                                          color: changeButtonColorFemale ? _ActiveColor : _InActiveColor
-                                      ),
+                                      child:
+                                        GenderIcon(
+                                            genderIcon: Ionicons.ios_female,
+                                            iconSize: 88.ssp,
+                                            color: changeButtonColorFemale ? _ActiveColor : _InActiveColor
+                                        ),
+                                      // Icon(Ionicons.ios_female,size: 88.ssp,
+                                      //     color: changeButtonColorFemale ? _ActiveColor : _InActiveColor
+                                      // ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.fromLTRB(0, 1, 0, 5),
-                                      child: Text(
-                                        "FEMALE", style: TextStyle(
-                                          fontSize: 24.ssp,
-                                          fontFamily: 'San francisco',
-                                          color: changeButtonColorFemale ? _ActiveColor : _InActiveColor
-                                      ),
-                                      ),
+                                      child:
+                                        text(
+                                            text1: "FEMALE",
+                                            size: 24.ssp,
+                                            color: changeButtonColorFemale ? _ActiveColor : _InActiveColor
+                                        ),
+                                      // Text(
+                                      //   "FEMALE", style: TextStyle(
+                                      //     fontSize: 24.ssp,
+                                      //     fontFamily: 'San francisco',
+                                      //     color: changeButtonColorFemale ? _ActiveColor : _InActiveColor
+                                      // ),
+                                      // ),
                                     ),
                                   ],
                                 ),
@@ -302,31 +337,48 @@ class _home_screenState extends State<home_screen> {
                                     children: [
                                       Padding(
                                         padding: const EdgeInsets.fromLTRB(24, 10, 3, 5),
-                                        child: Text("WEIGHT",
-                                          style: TextStyle(
-                                              fontSize: 24.ssp,
-                                              fontFamily: 'San francisco',
+                                        child:
+                                          text(
+                                              text1: "WEIGHT",
+                                              size: 24.ssp,
                                               color: _InActiveColor
                                           ),
-                                        ),
+                                        // Text("WEIGHT",
+                                        //   style: TextStyle(
+                                        //       fontSize: 24.ssp,
+                                        //       fontFamily: 'San francisco',
+                                        //       color: _InActiveColor
+                                        //   ),
+                                        // ),
                                       ),
-                                      Text("(Kg)",
-                                        style: TextStyle(
-                                          color: _InActiveColor,
-                                          fontSize: 11.ssp,
-                                          fontFamily: 'San francisco',
-                                        ),
+                                      text(
+                                          text1: "(Kg)",
+                                          size: 11.ssp,
+                                          color: _InActiveColor
                                       ),
+                                      // Text("(Kg)",
+                                      //   style: TextStyle(
+                                      //     color: _InActiveColor,
+                                      //     fontSize: 11.ssp,
+                                      //     fontFamily: 'San francisco',
+                                      //   ),
+                                      // ),
                                     ],
                                   ),
                                   /* Display Weight in numbers */
-                                  Text(weight.toString(),
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 26.ssp,
-                                        fontFamily: 'San francisco',
-                                      ),
-                                    ),
+                                  text(
+                                      text1: weight.toString(),
+                                      size: 26.ssp,
+                                      color: Colors.white
+                                  ),
+                                  // Text(
+                                  //   weight.toString(),
+                                  //     style: TextStyle(
+                                  //       color: Colors.white,
+                                  //       fontSize: 26.ssp,
+                                  //       fontFamily: 'San francisco',
+                                  //     ),
+                                  //   ),
                                   Row(
                                     children: [
                                       /* Weight decrease icon */
@@ -437,33 +489,48 @@ class _home_screenState extends State<home_screen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           /* Height label */
-                          Text("HEIGHT",
-                              style: TextStyle(
-                                  fontSize: 24.ssp,
-                                  fontFamily: 'San francisco',
-                                  color: _InActiveColor
-                              ),
-                            ),
-                          Text("(Cm)",
-                            style: TextStyle(
-                              color: _InActiveColor,
-                              fontSize: 11.ssp,
-                              fontFamily: 'San francisco',
-                            ),
+                          text(
+                              text1: "HEIGHT",
+                              size: 24.ssp,
+                              color: _InActiveColor
                           ),
+                          text(
+                              text1: "(Cm)",
+                              size: 11.ssp,
+                              color: _InActiveColor
+                          ),
+                          // Text("HEIGHT",
+                          //     style: TextStyle(
+                          //         fontSize: 24.ssp,
+                          //         fontFamily: 'San francisco',
+                          //         color: _InActiveColor
+                          //     ),
+                          //   ),
+                          // Text("(Cm)",
+                          //   style: TextStyle(
+                          //     color: _InActiveColor,
+                          //     fontSize: 11.ssp,
+                          //     fontFamily: 'San francisco',
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),
                     /* Height value */
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 15, 4),
-                      child: Text(height.toString(),
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 26.ssp,
-                        fontFamily: 'San francisco',
-                      ),
-                      ),
+                      child: text(
+                          text1: height.toString(),
+                          size: 26.ssp,
+                          color: Colors.white,
+                      )
+                      // Text(height.toString(),
+                      // style: TextStyle(
+                      //   color: Colors.white,
+                      //   fontSize: 26.ssp,
+                      //   fontFamily: 'San francisco',
+                      // ),
+                      // ),
                     ),
                     /* Slider */
                     SliderTheme(

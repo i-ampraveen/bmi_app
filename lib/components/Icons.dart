@@ -42,3 +42,22 @@ class RoundIconBtnPlus extends StatelessWidget {
   }
 }
 
+class GenderIcon extends StatelessWidget {
+
+  final IconData genderIcon;
+  final double iconSize;
+  final Color color;
+
+  GenderIcon({@required this.genderIcon, @required this.iconSize, @required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return Icon(
+        genderIcon,
+      color: color,
+      size: iconSize,
+    );
+  }
+}
+
+
