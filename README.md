@@ -1,16 +1,11 @@
-# bmi_app_one
+Note: Application is still in development phase. Kindly watch this space for more info.
 
-Bmi app one
+# BMI App
+
+This is my first flutter application (android).
+BMI App.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Body mass index is a familiar term for those who are weight conscious. It is the term that let user know about the overall body composition in terms of fat.
+In this app, user can select their Gender, Age, Height and Weight and calculate their Body Mass Index (BMI)
