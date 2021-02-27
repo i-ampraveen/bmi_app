@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:bmi_app_one/utils/TextStyle_Decorations.dart';
+import 'file:///C:/Users/00004987/IdeaProjects/bmi_app_one/lib/components/TextStyle_Decorations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'HomeScreen.dart';
