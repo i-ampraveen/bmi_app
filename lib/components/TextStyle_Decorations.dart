@@ -50,22 +50,4 @@ Text(_appBarText,
         letterSpacing: 1.0
     ));
 
-TextStyle ResultScreenAnimationTextStyle1 =
-TextStyle(
-  color: Colors.white70,
-  fontSize: 10.ssp,
-  fontWeight: FontWeight.bold,
-  letterSpacing: 2.0,
-  fontFamily: 'San francisco',
-);
-
-TextStyle ResultScreenAnimationTextStyle2 =
-TextStyle(
-  color: Colors.white,
-  fontSize: 20.ssp,
-  fontWeight: FontWeight.bold,
-  letterSpacing: 2.0,
-  fontFamily: 'San francisco',
-);
-
 

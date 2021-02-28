@@ -16,6 +16,12 @@ class BMILogic{
     return _bmi.toStringAsFixed(1);
   }
 
+  String displayBMIinText(){
+    return (_bmi >= 25) ? "Overweight"
+        : (_bmi > 18.5) ? "Normal"
+        : "Underweight" ;
+  }
+
   String printResult(){
     if (_bmi >= 25){
       return 'You have a higher than normal body weight. Try to avoid carbs, sugar and exercise more.';
@@ -27,29 +33,3 @@ class BMILogic{
   }
 }
 
-class resultAnimation extends StatefulWidget {
-  @override
-  _resultAnimationState createState() => _resultAnimationState();
-}
-
-class _resultAnimationState extends State<resultAnimation> {
-
-  bool textAnimation = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          AnimatedDefaultTextStyle(
-              curve: Curves.easeOutSine,
-              child: Text("Congratulations!"),
-              style: textAnimation ? ResultScreenAnimationTextStyle1 : ResultScreenAnimationTextStyle2,
-              duration: Duration(milliseconds: 900)
-          )
-        ],
-      ),
-    );
-  }
-}

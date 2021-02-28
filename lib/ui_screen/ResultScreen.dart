@@ -14,6 +14,7 @@ class BMIResult extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: _app_bg_color,
+      /* Results screen App Bar */
       appBar: AppBar(
         title: Text(""),
         backgroundColor: _app_bg_color,
@@ -25,6 +26,7 @@ class BMIResult extends StatelessWidget {
             children: [
               Padding(
                 padding: EdgeInsets.fromLTRB(0, 0.02.sh, 0.3.sw, 0),
+                /* Top Text */
                 child: text(
                     text1: "Your Result",
                     size: 42.ssp,
@@ -33,6 +35,7 @@ class BMIResult extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.fromLTRB(0.05.sw, 0.03.sh, 0.05.sw, 0),
+                /* Actual Result Display */
                 child: Container(
                   color: _Containercolor,
                   width: ScreenUtil().screenWidth,
@@ -40,7 +43,6 @@ class BMIResult extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-
                     ],
                   ),
                 ),
