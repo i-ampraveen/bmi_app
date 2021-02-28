@@ -13,5 +13,5 @@ In this app, user can select their Gender, Age, Height and Weight and calculate 
 
 ## Planned:
 
-V1.0 - Add toggle switch between dark mode and light mode
+V1.0 - Add toggle switch between dark mode and light mode </br>
 V2.0 - Result animation (text animation)
