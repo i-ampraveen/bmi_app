@@ -1,4 +1,5 @@
 import 'package:bmi_app_one/components/Button_Text_TextStyle.dart';
+import 'package:bmi_app_one/components/TextStyle_Decorations.dart';
 import 'package:bmi_app_one/utils/hexcolor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,15 @@ class BMIResult extends StatelessWidget {
   Color _app_bg_color = HexColor("#111328");
   Color _InActiveColor = Colors.white.withOpacity(0.7);
   Color _Containercolor = HexColor("#1D1E33");
+  Color _white = Colors.white;
+  Color _red = Colors.redAccent;
+  Color _green = Colors.green;
+
+  final String bmiResult;
+  final String bmiDisplay;
+  final String bmiInText;
+
+  BMIResult({@required this.bmiDisplay, @required this.bmiResult, @required this.bmiInText});
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +51,15 @@ class BMIResult extends StatelessWidget {
                   width: ScreenUtil().screenWidth,
                   height: 0.6.sh,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      text(text1: bmiDisplay, size: 22.ssp,
+                          // if(bmiDisplay == "Overweight"){
+                          //   color: _red,
+                          //   }
+                          ),
+                      text(text1: bmiResult, size: 44.ssp, color: _white),
+                      text(text1: bmiInText, size: 22.ssp, color: _white)
                     ],
                   ),
                 ),

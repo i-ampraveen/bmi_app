@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:bmi_app_one/Logic.dart';
 import 'package:bmi_app_one/components/Button_Text_TextStyle.dart';
 import 'package:bmi_app_one/components/Icons.dart';
 import 'file:///C:/Users/00004987/IdeaProjects/bmi_app_one/lib/components/TextStyle_Decorations.dart';
@@ -485,9 +486,16 @@ class _home_screenState extends State<home_screen> {
                     width: ScreenUtil().screenWidth,
                     height: 0.06.sh,
                     size: 21.0.ssp,
-                    callback: () => Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => BMIResult()
-                    ))
+                    callback: () {
+                      BMILogic calculate = BMILogic(height: height, weight: weight);
+
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => BMIResult(
+                            bmiResult: calculate.calculateBMI(),
+                            bmiDisplay: calculate.displayBMIinText(),
+                            bmiInText: calculate.printResult(),
+                          )));
+                    }
                 ),
               ),
             ),

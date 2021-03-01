@@ -50,4 +50,3 @@ Text(_appBarText,
         letterSpacing: 1.0
     ));
 
-
