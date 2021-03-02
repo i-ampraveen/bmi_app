@@ -13,6 +13,7 @@ class BMIResult extends StatelessWidget {
   Color _white = Colors.white;
   Color _red = Colors.redAccent;
   Color _green = Colors.green;
+  Color _yellow = Colors.yellow;
 
   final String bmiResult;
   final String bmiDisplay;
@@ -47,17 +48,24 @@ class BMIResult extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(0.05.sw, 0.03.sh, 0.05.sw, 0),
                 /* Actual Result Display */
                 child: Container(
-                  color: _Containercolor,
+                  //color: _Containercolor,
                   width: ScreenUtil().screenWidth,
                   height: 0.6.sh,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: _Containercolor
+                  ),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      text(text1: bmiDisplay, size: 22.ssp,
-                          color: bmiDisplay == "Overweight" ? _red : bmiDisplay == "Underweight" ? _white : _green
-                          ),
-                      text(text1: bmiResult, size: 44.ssp, color: _white),
-                      text(text1: bmiInText, size: 22.ssp, color: _white)
+                        text(text1: bmiDisplay, size: 25.ssp,
+                            color: bmiDisplay == "Overweight" ? _red : bmiDisplay == "Underweight" ? _yellow : _green
+                            ),
+                        text(text1: bmiResult, size: 44.ssp, color: _white),
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(0.08.sw, 0, 0, 0),
+                        child: text(text1: bmiInText, size: 20.ssp, color: _InActiveColor),
+                      )
                     ],
                   ),
                 ),
