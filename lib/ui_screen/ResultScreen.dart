@@ -54,9 +54,7 @@ class BMIResult extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       text(text1: bmiDisplay, size: 22.ssp,
-                          // if(bmiDisplay == "Overweight"){
-                          //   color: _red,
-                          //   }
+                          color: bmiDisplay == "Overweight" ? _red : bmiDisplay == "Underweight" ? _white : _green
                           ),
                       text(text1: bmiResult, size: 44.ssp, color: _white),
                       text(text1: bmiInText, size: 22.ssp, color: _white)
