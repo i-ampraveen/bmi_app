@@ -7,8 +7,18 @@ BMI App.
 
 ## Getting Started
 
-Body mass index is a familiar term for those who are weight conscious. It is the term that let user know about the overall body composition in terms of fat.
-In this app, user can select their Gender, Age, Height and Weight and calculate their Body Mass Index (BMI)
+App Description: Body mass index is a familiar term for those who are weight conscious. It is the term that let user know about the overall body composition in terms of fat.
+In this app, user can select their Gender, Age, Height and Weight and calculate their Body Mass Index (BMI).</br>
+
+# User Actions:
+> Need to select a gender. </br>
+> Need to select his/her age. </br>
+> Need to select his/her height. </br>
+> Need to select his/her weight. </br>
+OnPress of calculate button </br>
+
+# System Actions:
+BMI value is displayed along with the category (Underweight / Normal / Overweight).
 
 
 ## Planned:
