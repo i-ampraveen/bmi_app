@@ -1,5 +1,4 @@
 import 'package:bmi_app_one/components/Button_Text_TextStyle.dart';
-import 'package:bmi_app_one/components/TextStyle_Decorations.dart';
 import 'package:bmi_app_one/utils/hexcolor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,13 +6,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BMIResult extends StatelessWidget {
 
-  Color _app_bg_color = HexColor("#111328");
-  Color _InActiveColor = Colors.white.withOpacity(0.7);
-  Color _Containercolor = HexColor("#1D1E33");
+  Color _appBgColor = HexColor("#111328");
+  Color _inActiveColor = Colors.white.withOpacity(0.7);
+  Color _containerColor = HexColor("#1D1E33");
   Color _white = Colors.white;
   Color _red = Colors.redAccent;
   Color _green = Colors.green;
   Color _yellow = Colors.yellow;
+  Color _backBtnColor = HexColor("#f5cc0a").withOpacity(0.7);
 
   final String bmiResult;
   final String bmiDisplay;
@@ -24,11 +24,11 @@ class BMIResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: _app_bg_color,
+      backgroundColor: _appBgColor,
       /* Results screen App Bar */
       appBar: AppBar(
         title: Text(""),
-        backgroundColor: _app_bg_color,
+        backgroundColor: _appBgColor,
         automaticallyImplyLeading: false,
       ),
       body: Container(
@@ -41,7 +41,7 @@ class BMIResult extends StatelessWidget {
                 child: text(
                     text1: "Your Result",
                     size: 42.ssp,
-                    color: _InActiveColor
+                    color: _inActiveColor
                 ),
               ),
               Padding(
@@ -53,7 +53,7 @@ class BMIResult extends StatelessWidget {
                   height: 0.6.sh,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
-                    color: _Containercolor
+                    color: _containerColor
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -64,10 +64,24 @@ class BMIResult extends StatelessWidget {
                         text(text1: bmiResult, size: 44.ssp, color: _white),
                       Padding(
                         padding: EdgeInsets.fromLTRB(0.08.sw, 0, 0, 0),
-                        child: text(text1: bmiInText, size: 20.ssp, color: _InActiveColor),
+                        child: text(text1: bmiInText, size: 20.ssp, color: _inActiveColor),
                       )
                     ],
                   ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+                child: calculateButton(
+                    btnColor: _backBtnColor,
+                    txtColor: _white,
+                    text: "BACK",
+                    width: 0.3.sw,
+                    height: 0.06.sh,
+                    size: 20.ssp,
+                    callback: (){
+                      Navigator.pop(context);
+                    }
                 ),
               )
             ],

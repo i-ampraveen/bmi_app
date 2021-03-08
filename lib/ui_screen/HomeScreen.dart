@@ -20,11 +20,11 @@ class home_screen extends StatefulWidget {
 
 class _home_screenState extends State<home_screen> {
 
-  Color _Containercolor = HexColor("#1D1E33");
-  Color _ActiveColor = HexColor("#f5cc0a").withOpacity(0.7);
-  Color _InActiveColor = Colors.white.withOpacity(0.7);
-  Color _ThumbOverlayColor = HexColor("#f5cc0a").withOpacity(0.1);
-  Color _BtnColor = HexColor("#EB1555");
+  Color _containerColor = HexColor("#1D1E33");
+  Color _activeColor = HexColor("#f5cc0a").withOpacity(0.7);
+  Color _inActiveColor = Colors.white.withOpacity(0.7);
+  Color _thumbOverlayColor = HexColor("#f5cc0a").withOpacity(0.1);
+  Color _btnColor = HexColor("#EB1555");
   Color _newAppBgColor = HexColor("#111328");
   String buttonText = "CALCULATE";
   bool changeButtonColorMale = false;
@@ -83,7 +83,7 @@ class _home_screenState extends State<home_screen> {
                                 width: 0.4.sw,
                                 height: 0.2.sh,
                                 decoration: BoxDecoration(
-                                    color: _Containercolor,
+                                    color: _containerColor,
                                     borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 margin: EdgeInsets.all(10),
@@ -95,7 +95,7 @@ class _home_screenState extends State<home_screen> {
                                         GenderIcon(
                                             genderIcon: Ionicons.ios_male,
                                             iconSize: 88.ssp,
-                                            color: changeButtonColorMale ? _ActiveColor : _InActiveColor,
+                                            color: changeButtonColorMale ? _activeColor : _inActiveColor,
                                         ),
                                     ),
                                     Padding(
@@ -104,7 +104,7 @@ class _home_screenState extends State<home_screen> {
                                         text(
                                             text1: "MALE",
                                             size: 24.ssp,
-                                            color: changeButtonColorMale ? _ActiveColor : _InActiveColor,
+                                            color: changeButtonColorMale ? _activeColor : _inActiveColor,
                                         ),
                                     ),
                                   ],
@@ -121,7 +121,7 @@ class _home_screenState extends State<home_screen> {
                               height: 0.2.sh,
                               margin: EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                  color: _Containercolor,
+                                  color: _containerColor,
                                   borderRadius: BorderRadius.circular(10.0)
                               ),
                               child: Column(
@@ -134,7 +134,7 @@ class _home_screenState extends State<home_screen> {
                                       text(
                                           text1: "AGE",
                                           size: 24.ssp,
-                                          color: _InActiveColor
+                                          color: _inActiveColor
                                       ),
                                   ),
                               /* Display Age in Numbers */
@@ -248,7 +248,7 @@ class _home_screenState extends State<home_screen> {
                                 width: 0.4.sw,
                                 height: 0.2.sh,
                                 decoration: BoxDecoration(
-                                    color: _Containercolor,
+                                    color: _containerColor,
                                     borderRadius: BorderRadius.circular(10.0)
                                 ),
                                 margin: EdgeInsets.all(10.0),
@@ -260,7 +260,7 @@ class _home_screenState extends State<home_screen> {
                                         GenderIcon(
                                             genderIcon: Ionicons.ios_female,
                                             iconSize: 88.ssp,
-                                            color: changeButtonColorFemale ? _ActiveColor : _InActiveColor
+                                            color: changeButtonColorFemale ? _activeColor : _inActiveColor
                                         ),
                                     ),
                                     Padding(
@@ -269,7 +269,7 @@ class _home_screenState extends State<home_screen> {
                                         text(
                                             text1: "FEMALE",
                                             size: 24.ssp,
-                                            color: changeButtonColorFemale ? _ActiveColor : _InActiveColor
+                                            color: changeButtonColorFemale ? _activeColor : _inActiveColor
                                         ),
                                     ),
                                   ],
@@ -285,7 +285,7 @@ class _home_screenState extends State<home_screen> {
                               height: 0.2.sh,
                               margin: EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                  color: _Containercolor,
+                                  color: _containerColor,
                                   borderRadius: BorderRadius.circular(10.0)
                               ),
                               child: Column(
@@ -301,13 +301,13 @@ class _home_screenState extends State<home_screen> {
                                           text(
                                               text1: "WEIGHT",
                                               size: 24.ssp,
-                                              color: _InActiveColor
+                                              color: _inActiveColor
                                           ),
                                       ),
                                       text(
                                           text1: "(Kg)",
                                           size: 11.ssp,
-                                          color: _InActiveColor
+                                          color: _inActiveColor
                                       ),
                                     ],
                                   ),
@@ -412,7 +412,7 @@ class _home_screenState extends State<home_screen> {
                 width: ScreenUtil().screenWidth,
                 height: 0.2.sh,
                 decoration: BoxDecoration(
-                  color: _Containercolor,
+                  color: _containerColor,
                   borderRadius: BorderRadius.circular(10.0)
                 ),
                 child: Column(
@@ -428,12 +428,12 @@ class _home_screenState extends State<home_screen> {
                           text(
                               text1: "HEIGHT",
                               size: 24.ssp,
-                              color: _InActiveColor
+                              color: _inActiveColor
                           ),
                           text(
                               text1: "(Cm)",
                               size: 11.ssp,
-                              color: _InActiveColor
+                              color: _inActiveColor
                           ),
                         ],
                       ),
@@ -451,11 +451,11 @@ class _home_screenState extends State<home_screen> {
                     SliderTheme(
                       data: SliderTheme.of(context).copyWith(
                         trackHeight: 2.0,
-                        thumbColor: _ActiveColor,
-                        activeTrackColor: _ActiveColor,
-                        inactiveTrackColor: _InActiveColor,
+                        thumbColor: _activeColor,
+                        activeTrackColor: _activeColor,
+                        inactiveTrackColor: _inActiveColor,
                         thumbShape: RoundSliderThumbShape(enabledThumbRadius: 12.0),
-                        overlayColor: _ThumbOverlayColor
+                        overlayColor: _thumbOverlayColor
                       ),
                       child: Slider(
                           min: 10,
@@ -480,7 +480,7 @@ class _home_screenState extends State<home_screen> {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
                 child: calculateButton(
-                    btnColor: _BtnColor,
+                    btnColor: _activeColor/*_btnColor*/,
                     txtColor: Colors.white,
                     text: buttonText,
                     width: ScreenUtil().screenWidth,
