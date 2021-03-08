@@ -1,8 +1,9 @@
 import 'dart:async';
 
+import 'package:bmi_app_one/Logic.dart';
 import 'package:bmi_app_one/components/Button_Text_TextStyle.dart';
-import 'package:bmi_app_one/components/RoundIcon.dart';
-import 'package:bmi_app_one/utils/TextStyle_Decorations.dart';
+import 'package:bmi_app_one/components/Icons.dart';
+import 'file:///C:/Users/00004987/IdeaProjects/bmi_app_one/lib/components/TextStyle_Decorations.dart';
 import 'package:bmi_app_one/utils/hexcolor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,14 +20,11 @@ class home_screen extends StatefulWidget {
 
 class _home_screenState extends State<home_screen> {
 
-  //Color _appBar_bg_color = HexColor('#1C1C1E');
- // Color _app_bg_color = HexColor('#2c2c2e');
-  Color _BMIyellow = HexColor("#f5cc0a");
-  Color _Containercolor = HexColor("#1D1E33");
-  Color _ActiveColor = HexColor("#f5cc0a").withOpacity(0.7);
-  Color _InActiveColor = Colors.white.withOpacity(0.7);
-  Color _ThumbOverlayColor = HexColor("#f5cc0a").withOpacity(0.1);
-  Color _BtnColor = HexColor("#EB1555");
+  Color _containerColor = HexColor("#1D1E33");
+  Color _activeColor = HexColor("#f5cc0a").withOpacity(0.7);
+  Color _inActiveColor = Colors.white.withOpacity(0.7);
+  Color _thumbOverlayColor = HexColor("#f5cc0a").withOpacity(0.1);
+  Color _btnColor = HexColor("#EB1555");
   Color _newAppBgColor = HexColor("#111328");
   String buttonText = "CALCULATE";
   bool changeButtonColorMale = false;
@@ -65,7 +63,6 @@ class _home_screenState extends State<home_screen> {
                         children: [
                           /* Male Button */
                           Padding(
-                            /* changed top padding from 8 to 18*/
                             padding: const EdgeInsets.fromLTRB(8, 18, 4, 8),
                             child: InkWell(
                               onTap: (){
@@ -86,7 +83,7 @@ class _home_screenState extends State<home_screen> {
                                 width: 0.4.sw,
                                 height: 0.2.sh,
                                 decoration: BoxDecoration(
-                                    color: _Containercolor,
+                                    color: _containerColor,
                                     borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 margin: EdgeInsets.all(10),
@@ -94,19 +91,21 @@ class _home_screenState extends State<home_screen> {
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.fromLTRB(0, 7, 0, 12),
-                                      child: Icon(Ionicons.ios_male,size: 88.ssp,
-                                          color: changeButtonColorMale ? _ActiveColor : _InActiveColor
-                                      ),
+                                      child:
+                                        GenderIcon(
+                                            genderIcon: Ionicons.ios_male,
+                                            iconSize: 88.ssp,
+                                            color: changeButtonColorMale ? _activeColor : _inActiveColor,
+                                        ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.fromLTRB(0, 1, 0, 5),
-                                      child: Text(
-                                        "MALE", style: TextStyle(
-                                        fontSize: 24.ssp,
-                                          fontFamily: 'San francisco',
-                                          color: changeButtonColorMale ? _ActiveColor : _InActiveColor
-                                      ),
-                                      ),
+                                      child:
+                                        text(
+                                            text1: "MALE",
+                                            size: 24.ssp,
+                                            color: changeButtonColorMale ? _activeColor : _inActiveColor,
+                                        ),
                                     ),
                                   ],
                                 ),
@@ -122,7 +121,7 @@ class _home_screenState extends State<home_screen> {
                               height: 0.2.sh,
                               margin: EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                  color: _Containercolor,
+                                  color: _containerColor,
                                   borderRadius: BorderRadius.circular(10.0)
                               ),
                               child: Column(
@@ -131,22 +130,19 @@ class _home_screenState extends State<home_screen> {
                                   /* Age Text */
                                   Padding(
                                     padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
-                                    child: Text("AGE",
-                                    style: TextStyle(
-                                      fontSize: 24.ssp,
-                                      fontFamily: 'San francisco',
-                                      color: _InActiveColor
-                                    ),
-                                    ),
+                                    child:
+                                      text(
+                                          text1: "AGE",
+                                          size: 24.ssp,
+                                          color: _inActiveColor
+                                      ),
                                   ),
                               /* Display Age in Numbers */
-                                Text(age.toString(),
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 26.ssp,
-                                    fontFamily: 'San francisco',
+                                  text(
+                                      text1: age.toString(),
+                                      size: 26.ssp,
+                                      color: Colors.white
                                   ),
-                                ),
                                   Row(
                                     children: [
                                       /* Age decrease icon */
@@ -160,7 +156,7 @@ class _home_screenState extends State<home_screen> {
                                             },
                                             onTapDown: (TapDownDetails details){
                                               debugPrint("onTapDown Pressed...");
-                                              _timer = Timer.periodic(Duration(milliseconds: 100), (t) {
+                                              _timer = Timer.periodic(Duration(milliseconds: 250), (t) {
                                                 setState(() {
                                                   if (age > 5) age--;
                                                 });
@@ -196,7 +192,7 @@ class _home_screenState extends State<home_screen> {
                                           },
                                           onTapDown: (TapDownDetails details){
                                             debugPrint("onTapDown Pressed...");
-                                            _timer = Timer.periodic(Duration(milliseconds: 100), (t) {
+                                            _timer = Timer.periodic(Duration(milliseconds: 250), (t) {
                                               setState(() {
                                                 if (age < 90) age++;
                                               });
@@ -252,7 +248,7 @@ class _home_screenState extends State<home_screen> {
                                 width: 0.4.sw,
                                 height: 0.2.sh,
                                 decoration: BoxDecoration(
-                                    color: _Containercolor,
+                                    color: _containerColor,
                                     borderRadius: BorderRadius.circular(10.0)
                                 ),
                                 margin: EdgeInsets.all(10.0),
@@ -260,28 +256,27 @@ class _home_screenState extends State<home_screen> {
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.fromLTRB(0, 7, 0, 12),
-                                      child: Icon(Ionicons.ios_female,size: 88.ssp,
-                                          color: changeButtonColorFemale ? _ActiveColor : _InActiveColor
-                                      ),
+                                      child:
+                                        GenderIcon(
+                                            genderIcon: Ionicons.ios_female,
+                                            iconSize: 88.ssp,
+                                            color: changeButtonColorFemale ? _activeColor : _inActiveColor
+                                        ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.fromLTRB(0, 1, 0, 5),
-                                      child: Text(
-                                        "FEMALE", style: TextStyle(
-                                          fontSize: 24.ssp,
-                                          fontFamily: 'San francisco',
-                                          color: changeButtonColorFemale ? _ActiveColor : _InActiveColor
-                                      ),
-                                      ),
+                                      child:
+                                        text(
+                                            text1: "FEMALE",
+                                            size: 24.ssp,
+                                            color: changeButtonColorFemale ? _activeColor : _inActiveColor
+                                        ),
                                     ),
                                   ],
                                 ),
                               ),
-
-
                             ),
                           ),
-
                           /* Weight */
                           Padding(
                             padding: const EdgeInsets.fromLTRB(0, 8, 8, 8),
@@ -290,7 +285,7 @@ class _home_screenState extends State<home_screen> {
                               height: 0.2.sh,
                               margin: EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                  color: _Containercolor,
+                                  color: _containerColor,
                                   borderRadius: BorderRadius.circular(10.0)
                               ),
                               child: Column(
@@ -302,31 +297,26 @@ class _home_screenState extends State<home_screen> {
                                     children: [
                                       Padding(
                                         padding: const EdgeInsets.fromLTRB(24, 10, 3, 5),
-                                        child: Text("WEIGHT",
-                                          style: TextStyle(
-                                              fontSize: 24.ssp,
-                                              fontFamily: 'San francisco',
-                                              color: _InActiveColor
+                                        child:
+                                          text(
+                                              text1: "WEIGHT",
+                                              size: 24.ssp,
+                                              color: _inActiveColor
                                           ),
-                                        ),
                                       ),
-                                      Text("(Kg)",
-                                        style: TextStyle(
-                                          color: _InActiveColor,
-                                          fontSize: 11.ssp,
-                                          fontFamily: 'San francisco',
-                                        ),
+                                      text(
+                                          text1: "(Kg)",
+                                          size: 11.ssp,
+                                          color: _inActiveColor
                                       ),
                                     ],
                                   ),
                                   /* Display Weight in numbers */
-                                  Text(weight.toString(),
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 26.ssp,
-                                        fontFamily: 'San francisco',
-                                      ),
-                                    ),
+                                  text(
+                                      text1: weight.toString(),
+                                      size: 26.ssp,
+                                      color: Colors.white
+                                  ),
                                   Row(
                                     children: [
                                       /* Weight decrease icon */
@@ -341,7 +331,7 @@ class _home_screenState extends State<home_screen> {
                                             },
                                             onTapDown: (TapDownDetails details){
                                               debugPrint("onTapDown Pressed...");
-                                              _timer = Timer.periodic(Duration(milliseconds: 100), (t) {
+                                              _timer = Timer.periodic(Duration(milliseconds: 250), (t) {
                                                 setState(() {
                                                   if(weight > 5) weight--;
                                                 });
@@ -377,7 +367,7 @@ class _home_screenState extends State<home_screen> {
                                             },
                                             onTapDown: (TapDownDetails details){
                                               debugPrint("onTapDown Pressed...");
-                                              _timer = Timer.periodic(Duration(milliseconds: 100), (t) {
+                                              _timer = Timer.periodic(Duration(milliseconds: 250), (t) {
                                                 setState(() {
                                                   if (weight <= 625) weight++;
                                                 });
@@ -408,7 +398,6 @@ class _home_screenState extends State<home_screen> {
                               ),
                             ),
                           ),
-
                         ],
                       )
                     ],
@@ -416,7 +405,6 @@ class _home_screenState extends State<home_screen> {
                 ],
               ),
             ),
-
             /* Height Slider 2nd set */
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 9, 20, 0),
@@ -424,7 +412,7 @@ class _home_screenState extends State<home_screen> {
                 width: ScreenUtil().screenWidth,
                 height: 0.2.sh,
                 decoration: BoxDecoration(
-                  color: _Containercolor,
+                  color: _containerColor,
                   borderRadius: BorderRadius.circular(10.0)
                 ),
                 child: Column(
@@ -437,19 +425,15 @@ class _home_screenState extends State<home_screen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           /* Height label */
-                          Text("HEIGHT",
-                              style: TextStyle(
-                                  fontSize: 24.ssp,
-                                  fontFamily: 'San francisco',
-                                  color: _InActiveColor
-                              ),
-                            ),
-                          Text("(Cm)",
-                            style: TextStyle(
-                              color: _InActiveColor,
-                              fontSize: 11.ssp,
-                              fontFamily: 'San francisco',
-                            ),
+                          text(
+                              text1: "HEIGHT",
+                              size: 24.ssp,
+                              color: _inActiveColor
+                          ),
+                          text(
+                              text1: "(Cm)",
+                              size: 11.ssp,
+                              color: _inActiveColor
                           ),
                         ],
                       ),
@@ -457,23 +441,21 @@ class _home_screenState extends State<home_screen> {
                     /* Height value */
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 15, 4),
-                      child: Text(height.toString(),
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 26.ssp,
-                        fontFamily: 'San francisco',
-                      ),
+                      child: text(
+                          text1: height.toString(),
+                          size: 26.ssp,
+                          color: Colors.white,
                       ),
                     ),
                     /* Slider */
                     SliderTheme(
                       data: SliderTheme.of(context).copyWith(
                         trackHeight: 2.0,
-                        thumbColor: _ActiveColor,
-                        activeTrackColor: _ActiveColor,
-                        inactiveTrackColor: _InActiveColor,
+                        thumbColor: _activeColor,
+                        activeTrackColor: _activeColor,
+                        inactiveTrackColor: _inActiveColor,
                         thumbShape: RoundSliderThumbShape(enabledThumbRadius: 12.0),
-                        overlayColor: _ThumbOverlayColor
+                        overlayColor: _thumbOverlayColor
                       ),
                       child: Slider(
                           min: 10,
@@ -491,7 +473,6 @@ class _home_screenState extends State<home_screen> {
                 ),
               ),
             ),
-
             /* Calculate BMI Button */
             ButtonTheme(
               minWidth: ScreenUtil().screenWidth,
@@ -499,19 +480,25 @@ class _home_screenState extends State<home_screen> {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
                 child: calculateButton(
-                    btnColor: _BtnColor,
+                    btnColor: _activeColor/*_btnColor*/,
                     txtColor: Colors.white,
                     text: buttonText,
                     width: ScreenUtil().screenWidth,
                     height: 0.06.sh,
                     size: 21.0.ssp,
-                    callback: () => Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => BMIResult()
-                    ))
+                    callback: () {
+                      BMILogic calculate = BMILogic(height: height, weight: weight);
+
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => BMIResult(
+                            bmiResult: calculate.calculateBMI(),
+                            bmiDisplay: calculate.displayBMIinText(),
+                            bmiInText: calculate.printResult(),
+                          )));
+                    }
                 ),
               ),
-            )
-
+            ),
           ],
         ),
       )

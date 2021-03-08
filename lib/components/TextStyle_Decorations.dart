@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:bmi_app_one/utils/hexcolor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 String _appBarText = "BMI CALCULATOR";
@@ -48,17 +49,4 @@ Text(_appBarText,
         wordSpacing: 2.0,
         letterSpacing: 1.0
     ));
-
-// Text ButtonText = Text(
-//   _buttonText, style: TextStyle(
-//     color: Colors.white,
-//     fontFamily: 'San francisco',
-//     //fontSize: 21.0.ssp,
-//     letterSpacing: 2.0,
-//     wordSpacing: 2.0
-// ),
-// );
-
-
-
 
