@@ -21,10 +21,10 @@ class home_screen extends StatefulWidget {
 class _home_screenState extends State<home_screen> {
 
   Color _containerColor = HexColor("#1D1E33");
-  Color _activeColor = HexColor("#f5cc0a").withOpacity(0.7);
+  Color _activeColor = HexColor("#f1b81c");
   Color _inActiveColor = Colors.white.withOpacity(0.7);
   Color _thumbOverlayColor = HexColor("#f5cc0a").withOpacity(0.1);
-  Color _btnColor = HexColor("#EB1555");
+  Color _btnColor = HexColor("#f1b81c").withOpacity(0.8);
   Color _newAppBgColor = HexColor("#111328");
   String buttonText = "CALCULATE";
   bool changeButtonColorMale = false;
@@ -66,7 +66,6 @@ class _home_screenState extends State<home_screen> {
                             padding: const EdgeInsets.fromLTRB(8, 18, 4, 8),
                             child: InkWell(
                               onTap: (){
-                                debugPrint("Gender: Male pressed");
                                 setState(() {
                                   if(changeButtonColorMale == false){
                                     changeButtonColorMale = true;
@@ -125,7 +124,6 @@ class _home_screenState extends State<home_screen> {
                                   borderRadius: BorderRadius.circular(10.0)
                               ),
                               child: Column(
-                                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   /* Age Text */
                                   Padding(
@@ -149,26 +147,21 @@ class _home_screenState extends State<home_screen> {
                                       Flexible(
                                         child: GestureDetector(
                                             onTap: (){
-                                              debugPrint("OnTap Pressed...");
                                               setState(() {
                                                 if (age > 5) age--;
                                               });
                                             },
                                             onTapDown: (TapDownDetails details){
-                                              debugPrint("onTapDown Pressed...");
                                               _timer = Timer.periodic(Duration(milliseconds: 250), (t) {
                                                 setState(() {
                                                   if (age > 5) age--;
                                                 });
-                                                debugPrint("value $age");
                                               });
                                             },
                                             onTapUp: (TapUpDetails details) {
-                                              debugPrint("OnTapDown pressed..");
                                               _timer.cancel();
                                             },
                                             onTapCancel: () {
-                                              debugPrint("OnTap cancel");
                                               _timer.cancel();
                                             },
                                           child: RoundIconBtnMinus(
@@ -185,26 +178,21 @@ class _home_screenState extends State<home_screen> {
                                       Flexible(
                                       child: GestureDetector(
                                           onTap: (){
-                                            debugPrint("OnTap Pressed...");
                                             setState(() {
                                               if (age < 90) age++;
                                             });
                                           },
                                           onTapDown: (TapDownDetails details){
-                                            debugPrint("onTapDown Pressed...");
                                             _timer = Timer.periodic(Duration(milliseconds: 250), (t) {
                                               setState(() {
                                                 if (age < 90) age++;
                                               });
-                                              debugPrint("value $age");
                                             });
                                           },
                                           onTapUp: (TapUpDetails details) {
-                                            debugPrint("OnTapDown pressed..");
                                             _timer.cancel();
                                           },
                                           onTapCancel: () {
-                                            debugPrint("OnTap cancel");
                                             _timer.cancel();
                                           },
                                           child: RoundIconBtnPlus(
@@ -231,7 +219,6 @@ class _home_screenState extends State<home_screen> {
                             padding: const EdgeInsets.fromLTRB(8, 0, 4, 0),
                             child: new InkWell(
                               onTap: (){
-                                debugPrint("Gender: Female pressed");
                                 setState(() {
                                   if(changeButtonColorFemale == false){
                                     changeButtonColorFemale = true;
@@ -324,26 +311,21 @@ class _home_screenState extends State<home_screen> {
                                         Flexible(
                                           child: GestureDetector(
                                             onTap: (){
-                                              debugPrint("OnTap Pressed...");
                                               setState(() {
                                                 if(weight > 5) weight--;
                                               });
                                             },
                                             onTapDown: (TapDownDetails details){
-                                              debugPrint("onTapDown Pressed...");
                                               _timer = Timer.periodic(Duration(milliseconds: 250), (t) {
                                                 setState(() {
                                                   if(weight > 5) weight--;
                                                 });
-                                                debugPrint("value $weight");
                                               });
                                             },
                                             onTapUp: (TapUpDetails details) {
-                                              debugPrint("OnTap up pressed..");
                                               _timer.cancel();
                                             },
                                             onTapCancel: () {
-                                              debugPrint("OnTap cancel");
                                               _timer.cancel();
                                             },
                                             child: RoundIconBtnMinus(
@@ -360,26 +342,21 @@ class _home_screenState extends State<home_screen> {
                                       Flexible(
                                           child: GestureDetector(
                                             onTap: (){
-                                              debugPrint("OnTap Pressed...");
                                               setState(() {
                                                 if (weight <= 625) weight++;
                                               });
                                             },
                                             onTapDown: (TapDownDetails details){
-                                              debugPrint("onTapDown Pressed...");
                                               _timer = Timer.periodic(Duration(milliseconds: 250), (t) {
                                                 setState(() {
                                                   if (weight <= 625) weight++;
                                                 });
-                                                debugPrint("value $weight");
                                               });
                                             },
                                             onTapUp: (TapUpDetails details) {
-                                              debugPrint("OnTapDown pressed..");
                                               _timer.cancel();
                                             },
                                             onTapCancel: () {
-                                              debugPrint("OnTap cancel");
                                               _timer.cancel();
                                             },
                                               child: RoundIconBtnPlus(
@@ -462,7 +439,6 @@ class _home_screenState extends State<home_screen> {
                           max: 300,
                           value: height.round().toDouble(),
                           onChanged: (double value){
-                            debugPrint("Height slided");
                             setState(() {
                               height = value.round();
                             });
@@ -480,8 +456,8 @@ class _home_screenState extends State<home_screen> {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
                 child: calculateButton(
-                    btnColor: _activeColor/*_btnColor*/,
-                    txtColor: Colors.white,
+                    btnColor: _btnColor,
+                    txtColor: Colors.black,
                     text: buttonText,
                     width: ScreenUtil().screenWidth,
                     height: 0.06.sh,
