@@ -13,7 +13,7 @@ class BMIResult extends StatelessWidget {
   Color _red = Colors.redAccent;
   Color _green = Colors.green;
   Color _yellow = Colors.yellow;
-  Color _backBtnColor = HexColor("#f5cc0a").withOpacity(0.7);
+  Color _backBtnColor = HexColor("#f1b81c").withOpacity(0.8);
 
   final String bmiResult;
   final String bmiDisplay;
@@ -48,7 +48,6 @@ class BMIResult extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(0.05.sw, 0.03.sh, 0.05.sw, 0),
                 /* Actual Result Display */
                 child: Container(
-                  //color: _Containercolor,
                   width: ScreenUtil().screenWidth,
                   height: 0.6.sh,
                   decoration: BoxDecoration(
@@ -74,7 +73,7 @@ class BMIResult extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
                 child: calculateButton(
                     btnColor: _backBtnColor,
-                    txtColor: _white,
+                    txtColor: Colors.black,
                     text: "BACK",
                     width: 0.3.sw,
                     height: 0.06.sh,

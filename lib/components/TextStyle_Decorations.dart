@@ -2,22 +2,19 @@ import 'dart:ui';
 import 'package:bmi_app_one/utils/hexcolor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 
 String _appBarText = "BMI CALCULATOR";
-//String _buttonText = "CALCULATE";
 
-Color _rightScrnColor = HexColor("#f5cc0a");
-Color _leftScrnColor = HexColor("#f7971e");
+Color _yellowShade = HexColor("#f1b81c").withOpacity(0.9);
+Color _blueShade = HexColor("#1D1E33");
 
 
 BoxDecoration openingScreenBgDecoration =
 BoxDecoration(
     gradient: LinearGradient(
-        begin: Alignment.topRight,
-        end: Alignment.bottomLeft,
-        colors: [_leftScrnColor, _rightScrnColor]
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [_yellowShade, _blueShade]
     )
 );
 
