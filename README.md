@@ -1,4 +1,4 @@
-Note: Application is still in development phase. Kindly watch this space for more info.
+Note: Application is moved to Beta phase. Kindly watch this space for more info.
 
 # BMI App
 
