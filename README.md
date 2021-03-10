@@ -37,7 +37,8 @@ BMI value is displayed along with the category (Underweight / Normal / Overweigh
 ![Screenshot_1615215359](https://user-images.githubusercontent.com/51072726/110342143-16504e00-8051-11eb-90ce-6bbe7926772e.png)
 
 
-#### Planned:
+### Planned:
 
-V1.0 - Add toggle switch between dark mode and light mode (currently app only supports dark mode) </br>
-V2.0 - Result animation (text animation)
+>toggle switch between dark mode and light mode (currently app only supports dark mode) </br>
+>Result animation (text animation) </br>
+>Adding Indicative Icons/Pictures of whats need to be done based on BMI results
