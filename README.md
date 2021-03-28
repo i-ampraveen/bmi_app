@@ -22,6 +22,11 @@ OnPress of calculate button </br>
 ### System Actions:
 BMI value is displayed along with the category (Underweight / Normal / Overweight).
 
+## Packages used in this App:
+`flutter_screenutil` for reasonable layout on different screen sizes (Adaptive screen size and fonts). </br>
+`flutter_icons` for custom icons (We can make it work without this) </br>
+`flutter_launcher_icons` to generate flutter launcher icons.
+
 ## How this App looks like in an Android phone :heart_eyes:
 ![Screenshot_1614767873](https://user-images.githubusercontent.com/51072726/110341653-94f8bb80-8050-11eb-8904-35bd6eb58439.png)
 ![Screenshot_1615215396](https://user-images.githubusercontent.com/51072726/110342071-046eab00-8051-11eb-9180-4cbb01f3c3a7.png)
@@ -32,7 +37,8 @@ BMI value is displayed along with the category (Underweight / Normal / Overweigh
 ![Screenshot_1615215359](https://user-images.githubusercontent.com/51072726/110342143-16504e00-8051-11eb-90ce-6bbe7926772e.png)
 
 
-#### Planned:
+### Planned:
 
-V1.0 - Add toggle switch between dark mode and light mode (currently app only supports dark mode) </br>
-V2.0 - Result animation (text animation)
+- Toggle switch between dark mode and light mode (currently app only supports dark mode) </br>
+- Result animation (text animation) </br>
+- Adding Indicative Icons/Pictures of whats need to be done based on BMI results
