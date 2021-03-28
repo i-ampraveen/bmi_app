@@ -6,15 +6,14 @@ import 'package:flutter/material.dart';
 String _appBarText = "BMI CALCULATOR";
 
 Color _yellowShade = HexColor("#f1b81c").withOpacity(0.9);
-Color _blueShade = HexColor("#1D1E33");
-
+Color _yellowShade1 = HexColor("#a07a12");
 
 BoxDecoration openingScreenBgDecoration =
 BoxDecoration(
     gradient: LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
-        colors: [_yellowShade, _blueShade]
+        colors: [_yellowShade, _yellowShade1]
     )
 );
 
