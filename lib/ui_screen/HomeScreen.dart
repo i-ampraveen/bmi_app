@@ -127,7 +127,7 @@ class _home_screenState extends State<home_screen> {
                                 children: [
                                   /* Age Text */
                                   Padding(
-                                    padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+                                    padding: const EdgeInsets.fromLTRB(8, 14, 8, 8),
                                     child:
                                       text(
                                           text1: "AGE",
@@ -283,7 +283,7 @@ class _home_screenState extends State<home_screen> {
                                     textBaseline: TextBaseline.alphabetic,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsets.fromLTRB(24, 10, 3, 5),
+                                        padding: const EdgeInsets.fromLTRB(24, 14, 3, 8),
                                         child:
                                           text(
                                               text1: "WEIGHT",
